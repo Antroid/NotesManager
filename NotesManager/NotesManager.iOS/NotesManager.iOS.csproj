@@ -87,8 +87,12 @@
         <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     </PropertyGroup>
     <ItemGroup>
+        <Compile Include="custom\renderers\PageTabRenderer.cs" />
+        <Compile Include="custom\renderers\ScheduleInnerTabsRenderer.cs" />
+        <Compile Include="custom\renderers\TimeRenderer.cs" />
         <Compile Include="Main.cs" />
         <Compile Include="AppDelegate.cs" />
+        <Compile Include="services\GPSDependencyService.cs" />
         <None Include="Entitlements.plist" />
         <None Include="Info.plist" />
         <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,6 +122,11 @@
             <Project>{805F7C87-E4DD-4D13-849B-3F4D3CF23AA4}</Project>
             <Name>NotesManager</Name>
         </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <BundleResource Include="Resources\schedule-24px.svg" />
+      <BundleResource Include="Resources\settings-24px.svg" />
+      <BundleResource Include="Resources\today-24px.svg" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:NotesManager.viewmodels;assembly=NotesManager"
+             x:Class="NotesManager.views.schedule.tabs.PastNotesPage">
+    <ContentPage.BindingContext>
+        <viewmodels:PastNotesPageViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <ListView x:Name="listView" ItemSelected="OnItemSelected" HasUnevenRows="true" ItemsSource="{Binding Notes}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="5, 5, 5, 5" HorizontalOptions="StartAndExpand" Orientation="Vertical">
+                            <Label Text="{Binding .ID}" VerticalTextAlignment="Center" FontSize="Small" />
+                            <Label Text="{Binding .Date}" VerticalTextAlignment="Center" FontSize="Small" />
+                            <Label Text="{Binding .Text}" VerticalTextAlignment="Center" FontSize="Small" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

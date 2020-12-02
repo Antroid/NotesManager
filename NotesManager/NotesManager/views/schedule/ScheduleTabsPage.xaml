@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Name="UpperTabs"
+            x:Class="NotesManager.views.schedule.ScheduleTabsPage"
+            xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:tabs="clr-namespace:NotesManager.views.schedule.tabs;assembly=NotesManager"
+            android:TabbedPage.IsSmoothScrollEnabled="True"
+            android:TabbedPage.IsSwipePagingEnabled="False"
+            BarBackgroundColor="{StaticResource TabsColor}"
+            iOS:Page.UseSafeArea="true" NavigationPage.HasNavigationBar="False"
+            BarTextColor="{DynamicResource SecondaryTextColor}"
+            UnselectedTabColor="{StaticResource TabsRegularColor}"
+            SelectedTabColor="{StaticResource TabsSelectedColor}"
+            NavigationPage.HasBackButton="False">
+    
+    
+    <tabs:PastNotesPage />
+    
+    <tabs:FutureNotesPage  />
+    
+</TabbedPage>

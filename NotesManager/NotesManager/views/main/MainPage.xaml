@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<custom:TabPage xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:custom="clr-namespace:NotesManager.custom;assembly=NotesManager"
+                x:Class="NotesManager.views.main.MainPage"
+                xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+                xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+                xmlns:schedule="clr-namespace:NotesManager.views.schedule;assembly=NotesManager"
+                xmlns:newNotes="clr-namespace:NotesManager.views.new_notes;assembly=NotesManager"
+                xmlns:settings="clr-namespace:NotesManager.views.settings;assembly=NotesManager"
+                android:TabbedPage.ToolbarPlacement="Bottom"
+                android:TabbedPage.IsSmoothScrollEnabled="True"
+                android:TabbedPage.IsSwipePagingEnabled="False"
+                BarBackgroundColor="{StaticResource TabsColor}"
+                iOS:Page.UseSafeArea="true" NavigationPage.HasNavigationBar="False"
+                BarTextColor="{DynamicResource SecondaryTextColor}"
+                UnselectedTabColor="{StaticResource TabsRegularColor}"
+                SelectedTabColor="{StaticResource TabsSelectedColor}"
+                NavigationPage.HasBackButton="False">
+
+
+    <newNotes:NewNotePage IconImageSource="{x:OnPlatform Android=ic_today, iOS=today-24px.svg}" />
+
+
+    <schedule:ScheduleTabsPage IconImageSource="{x:OnPlatform Android=ic_schedule, iOS=schedule-24px.svg}" />
+
+
+    <settings:SettingsPage IconImageSource="{x:OnPlatform Android=ic_settings, iOS=settings-24px.svg}" />
+
+
+</custom:TabPage>

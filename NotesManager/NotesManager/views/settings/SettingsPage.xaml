@@ -1,0 +1,22 @@
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             mc:Ignorable="d"
+             x:Class="NotesManager.views.settings.SettingsPage">
+
+    <StackLayout>
+
+        <maps:Map x:Name="map" />
+
+        <StackLayout x:Name="LoadingGPS" Orientation="Vertical" VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="CenterAndExpand" IsVisible="False">
+            <ActivityIndicator Color="Black" IsRunning="True" />
+            <Label>Getting GPS coordinates, please wait...</Label>
+        </StackLayout>
+
+    </StackLayout>
+
+
+</ContentPage>

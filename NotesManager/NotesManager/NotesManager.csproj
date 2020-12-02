@@ -17,4 +17,16 @@
         <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
         <PackageReference Include="Xamarin.Forms.Maps" Version="4.8.0.1687" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Resources\styles\Colors.xaml.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Colors.xaml.resx</DependentUpon>
+      </Compile>
+      <Compile Update="views\main\MainPage.xaml.cs">
+        <DependentUpon>MainPage.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
 </Project>

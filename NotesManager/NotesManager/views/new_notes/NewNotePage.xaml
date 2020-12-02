@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModels="clr-namespace:NotesManager.viewmodels;assembly=NotesManager"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:Class="NotesManager.views.new_notes.NewNotePage">
+
+    <ContentPage.BindingContext>
+        <ViewModels:NewNoteViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+
+            <Frame VerticalOptions="Center" IsVisible="True" HasShadow="False" Margin="5">
+                <StackLayout>
+
+                    <Editor BackgroundColor="Transparent" HeightRequest="125" Placeholder="Note"
+                            Text="{Binding Note}"
+                            Keyboard="Text" />
+
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                 Padding="5" Margin="0,0,0,10">
+
+                        <StackLayout Orientation="Horizontal">
+                            <ffimageloadingsvg:SvgCachedImage WidthRequest="25" HeightRequest="25"
+                                                              Source="resource://TabsApp.Resources.location_on-24px.svg" />
+
+                            <Entry x:Name="NoteLocation" HorizontalOptions="FillAndExpand" />
+
+                            <ffimageloadingsvg:SvgCachedImage
+                                x:Name="OpenMap"
+                                WidthRequest="25" HeightRequest="25"
+                                Source="{Binding MapIconArrowResource}">
+                                <ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding OpenMapView}" />
+                                </ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                            </ffimageloadingsvg:SvgCachedImage>
+                            
+                        </StackLayout>
+
+                        <StackLayout BackgroundColor="Coral" HeightRequest="100" />
+
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                 Padding="5" Margin="0,0,0,10">
+
+                        <ffimageloadingsvg:SvgCachedImage WidthRequest="25" HeightRequest="25"
+                                                          Source="resource://TabsApp.Resources.schedule.svg" />
+
+
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <DatePicker x:Name="DPicker"
+                                        MinimumDate="{Binding StartedDate}"
+                                        MaximumDate="{Binding EndedDate}"
+                                        Date="{Binding StartedDate}"
+                                        DateSelected="DPicker_DateSelected"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Start"
+                                        BackgroundColor="White" />
+                        </StackLayout>
+
+
+                        <TimePicker x:Name="TPicker" HorizontalOptions="End" BackgroundColor="Transparent"
+                                    Time="{Binding StartedTime}"
+                                    PropertyChanged="OnTimePickerPropertyChanged" />
+
+                    </StackLayout>
+
+
+                    <Button Text="Save"
+                            TextColor="White"
+                            BackgroundColor="{StaticResource ButtonColor}"
+                            BorderColor="{StaticResource ButtonColor}"
+                            BorderWidth="5"
+                            CornerRadius="5"
+                            FontSize="Medium"
+                            WidthRequest="120"
+                            HeightRequest="50"
+                            Command="{Binding CreateNewNote}" />
+
+                    <Label Text="{Binding status}" />
+
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
