@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesManager", "NotesManager\NotesManager\NotesManager.csproj", "{06E2B5C3-4004-4CA0-AD2F-722F793AD82F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesManager.Android", "NotesManager\NotesManager.Android\NotesManager.Android.csproj", "{665E2D51-990E-47A9-97BB-326CDA26C67E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesManager.droid", "NotesManager\NotesManager.droid\NotesManager.droid.csproj", "{665E2D51-990E-47A9-97BB-326CDA26C67E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesManager.iOS", "NotesManager\NotesManager.iOS\NotesManager.iOS.csproj", "{A6587414-7570-4A30-AEE0-E14624600276}"
 EndProject
